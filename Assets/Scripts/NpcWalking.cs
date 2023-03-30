@@ -44,4 +44,20 @@ public class NpcWalking : MonoBehaviour
         animator.SetFloat("Speed", isWalking ? 0 : 1);
         isWalking = !isWalking;
     }
+
+    public void NpcDance()
+    {
+        animator.SetTrigger("Dance");
+        NpcClapStop();
+    }
+
+    public void NpcClapStop() 
+    {
+        animator.SetBool("Clap", false);
+    }
+
+    public void NpcClapStart()
+    {
+        animator.SetBool("Clap", true);
+    }
 }

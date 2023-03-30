@@ -6,6 +6,8 @@ public class DoAction : MonoBehaviour
 {
     #region GameObjects
 
+    [SerializeField] private GameObject priceTag;
+
     [SerializeField] private MeshRenderer meshRenderer;
 
     [Header("GO emitting Particles")]
@@ -214,6 +216,30 @@ public class DoAction : MonoBehaviour
         isWorking = false;
         isOpen = false;
     }
-    
+
+    #endregion
+
+    #region ShowPriceTag
+
+    public void ShowPriceTag()
+    {
+        if (priceTag == null)
+        {
+            Debug.Log("no Price Tag Found.");
+            return;
+        }
+        priceTag.SetActive(true);
+    }
+
+    public void HidePriceTag()
+    {
+        if (priceTag == null)
+        {
+            Debug.Log("no Price Tag Found.");
+            return;
+        }
+        priceTag.SetActive(false);
+    }
+
     #endregion
 }
