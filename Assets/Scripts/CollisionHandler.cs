@@ -5,6 +5,7 @@ public class CollisionHandler : MonoBehaviour
 {
 	[SerializeField] private LookAtRayCast _lookAtRayCast;
 	[SerializeField] private TMP_Text teleportTxt;
+	[SerializeField] private LightUpHallway lightUpHall;
 	
 	private void OnTriggerEnter(Collider other)
 	{
@@ -24,6 +25,9 @@ public class CollisionHandler : MonoBehaviour
 				var anim2 = other.GetComponent<Animator>();
 				anim2.enabled = true;
 				anim2.Play("rockingChairAnim");
+				break;
+			case "Enter":
+				lightUpHall.StartLighting();
 				break;
 		}
 		

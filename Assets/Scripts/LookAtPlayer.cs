@@ -30,6 +30,8 @@ public class LookAtPlayer : MonoBehaviour
             currentRotation = Quaternion.Slerp(currentRotation, head.rotation, Time.deltaTime * lookAtSpeed);
         }
 
+        
+
         head.rotation = currentRotation;
     }
 }

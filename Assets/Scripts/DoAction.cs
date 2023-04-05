@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,8 +12,11 @@ public class DoAction : MonoBehaviour
     [Header("GO emitting Particles")]
     [SerializeField] private ParticleSystem particles;
     
-    [Tooltip("the object that has to be blown up when button is pressed")] 
+    [Tooltip("The object that has to be blown up when button is pressed")] 
     [SerializeField] private GameObject blowUpGO;
+
+    [Tooltip("Chest GO in 4th Minor Assign")]
+    [SerializeField] private Animation chestAnim;
 
     #endregion
 
@@ -133,6 +135,11 @@ public class DoAction : MonoBehaviour
         {
             StartCoroutine(CloseCrossing());
         }
+    }
+
+    public void ChestActions()
+    {
+        chestAnim.Play("ChestOpen");
     }
 
     private IEnumerator OpenCrossing()
